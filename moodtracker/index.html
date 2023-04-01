@@ -1,3 +1,33 @@
+<?php
+$host="localhost";
+$user="sqluser";
+$password="password";
+$db="students";
+
+$connection= mysqli_connect($host,$user,$password);
+mysqli_select_db($connection,$db);
+
+if(isset($_POST['username'])){
+    $uname=$_POST['username'];
+    $password =$_POST['password'];
+
+    $sql="SELECT*FROM login WHERE user=? AND  Pass=?  limit 1";
+    $result=mysqli_query($connect,$sql);
+
+    if(mysqli_num_rows($result)==1){
+        header("location: index2.html");
+        echo"You have succesfully logged in";
+        exit();
+    }
+    else{
+        echo"login is failed";
+        exit();
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +39,16 @@
 </head>
 <body>
     <div class="container">
+        <h1>LOGIN TO <span>MOODTRACKER</span></h1>
         <form method="POST" action="#">
             <div class="form-input">
-                <input type="text" name="text" placeholder="username">
-                <input type="password" name="password" placeholder="password">
-                <input type="submit" value="LOGIN" class="btn-login">
+                <h2>Username</h2>
+                <input type="text" name="text" >
+                <h2>Password</h2>
+                <input type="password" name="password">
     
             </div>
+            <button class="btn-login" type="submit" value="LOGIN">Login</button>
         </form>
        
     </div>

@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@500&family=Inter&family=Raleway:wght@200&display=swap');
 
 body{
     margin: 0 auto;
     background-image: url(download.jpg) ;
     background-repeat: no-repeat;
     background-size: 100% 1920px;
+    overflow-y: hidden;
 }
 .container{
     width: 970px;
@@ -16,14 +17,14 @@ border-radius: 30px;
     margin-top: 160px;
 }
 .container h1{
-padding-top: 30px;
+padding-top: 50px;
 padding-left: 100px;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
 font-size: 48px;
 line-height: 103.02%;
-padding-bottom: 10px;
+padding-bottom: 30px;
 display: flex;
 align-items: center;
 text-align: center;
@@ -31,7 +32,7 @@ letter-spacing: 0.01em;
 color: #014269;
 }
 .container span{
-    padding-top: 19px;
+    padding-top: 8px;
     padding-left: 35px;
     font-family: 'Inter';
     font-style: normal;
@@ -47,35 +48,88 @@ color: #014269;
     }
 input[type="text"],input[type="password"]{
     margin-top: 10px;
-    width: 529px;
-    height: 97px;
+    width: 510px;
+    height: 86px;
     font-size: 18px;
     margin-bottom: 10px;
     background: #01395E;
-    border-radius: 21px;
+    border-radius: 31px;
     margin-left: -250px;
 }
 .form-input h2{
     margin-right: 540px;
     font-family: 'Raleway';
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 font-size: 40px;
 line-height: 47px;
 color: #FFFFFF;
 }
 .btn-login{
-    margin-top: 30px;
+    margin-top: 35px;
     width: 302px;
     height: 81px;
     border: none;
-    border: 3px solid #004168;
+    border: 4px solid #004168;
     border-radius: 74px;
     background-color: rgba(149, 170, 224, 0) ;
     color: #fff;
     font-family: 'Raleway';
 font-style: normal;
-font-weight: 400;
+font-weight: 600;
 font-size: 40px;
 line-height: 47px;
+}
+
+.container-box{
+    background-color: #002953;
+    width: 100%;
+    height: 2000px;
+    text-align: center;
+}
+.container-box h2{
+    margin-top: 0;
+    padding-top: 150px;
+    margin-left: 3200px;
+    font-family: 'Exo';
+font-style: normal;
+font-weight: 600;
+font-size: 58px;
+line-height: 53px;
+
+
+color: #FFFFFF;
+
+}
+.container-box h1{
+    padding-top: 200px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 106px;
+    line-height: 75px;
+    margin-bottom: 400px;
+    color: #FFFFFF;
+
+}
+.images{
+margin-left: 500px;
+}
+.images img{
+    margin-right: 500px;
+    width: 329px;
+    height: 329px;
+    
+}
+.btn-logout{
+    position: absolute;
+   margin-top: 350px;
+   font-family: 'Raleway';
+font-style: normal;
+font-weight: 600;
+font-size: 52px;
+line-height: 61px;
+margin-left: -100px;
+text-decoration: none;
+color: #FDDE30;
 }
