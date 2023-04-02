@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION["sess_user"])){
+   header("location:index.php");
+} else{
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +16,7 @@
 <body>
     <div class="container-box">
         <h2>Score: 1000</h2>
-        <h1>How are you feeling?</h1>
+        <h1><?=$_SESSION["sess_user"];?>How are you feeling?</h1>
         <div class="images">
             <a href=""><img src="image3.png"></a>
             <a href=""><img src="image2.png"></a>
@@ -22,3 +28,6 @@
 
 </body>
 </html>
+<?php
+}
+?>

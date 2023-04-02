@@ -11,11 +11,19 @@ if(isset($_POST['username'])){
     $uname=$_POST['username'];
     $password =$_POST['password'];
 
-    $sql="SELECT*FROM login WHERE user=? AND  Pass=?  limit 1";
-    $result=mysqli_query($connect,$sql);
+    $sql="SELECT*FROM login WHERE username=? AND  password=?  limit 1"; // User and pass names of columns in login table
+    $stmt=mysqli_prepare($connect,$sql); //sendig request to database
+    mysqli_stmt_bind_param($stmt,"ss", $uname, $password); //binding inserted data and database data
+    mysqli_stmt_execute($stmt); //execute statment
+    $result = mysqli_stmt_get_result($stmt); //getting result
+
+
 
     if(mysqli_num_rows($result)==1){
-        echo"You have succesfully logged in";
+        session_start();
+        $_SESSION["sess_user"]=$uname; // asigns sess_user $uname
+        header("location: index2.html");
+        //echo"You have succesfully logged in";
         exit();
     }
     else{
@@ -42,7 +50,7 @@ if(isset($_POST['username'])){
         <form method="POST" action="#">
             <div class="form-input">
                 <h2>Username</h2>
-                <input type="text" name="text" >
+                <input type="text" name="usernames" >
                 <h2>Password</h2>
                 <input type="password" name="password">
     
