@@ -2,9 +2,11 @@
 
 body{
     margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
     background-image: url(download.jpg) ;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 100% 1920px;
     overflow-y: hidden;
 }
 .container{
@@ -55,6 +57,12 @@ input[type="text"],input[type="password"]{
     background: #01395E;
     border-radius: 31px;
     margin-left: -250px;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Raleway';
+   font-style: normal;
+   font-weight: 600;
 }
 .form-input h2{
     margin-right: 540px;
@@ -81,55 +89,3 @@ font-size: 40px;
 line-height: 47px;
 }
 
-.container-box{
-    background-color: #002953;
-    width: 100%;
-    height: 2000px;
-    text-align: center;
-}
-.container-box h2{
-    margin-top: 0;
-    padding-top: 150px;
-    margin-left: 3200px;
-    font-family: 'Exo';
-font-style: normal;
-font-weight: 600;
-font-size: 58px;
-line-height: 53px;
-
-
-color: #FFFFFF;
-
-}
-.container-box h1{
-    padding-top: 200px;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 106px;
-    line-height: 75px;
-    margin-bottom: 400px;
-    color: #FFFFFF;
-
-}
-.images{
-margin-left: 500px;
-}
-.images img{
-    margin-right: 500px;
-    width: 329px;
-    height: 329px;
-    
-}
-.btn-logout{
-    position: absolute;
-   margin-top: 350px;
-   font-family: 'Raleway';
-font-style: normal;
-font-weight: 600;
-font-size: 52px;
-line-height: 61px;
-margin-left: -100px;
-text-decoration: none;
-color: #FDDE30;
-}

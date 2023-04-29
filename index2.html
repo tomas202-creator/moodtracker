@@ -1,0 +1,120 @@
+<?php
+session_start();
+if(!isset($_SESSION["sess_user"])){
+   header("location:index.php");
+} else{
+?>
+
+<?php
+$databaseHost = 'localhost';
+$databaseName= 'students';
+$databaseUsername = 'sqluser';
+$databasePassword = 'password';
+
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+
+if(isset($_POST['submit'])){
+    $name = $_SESSION["sess_user"];
+    $mood = $_POST['mood'];
+    $result = mysqli_query($mysqli, "INSERT INTO moods (name, mood, time) VALUES ('$name', '$mood', now())");
+}
+
+if($result){
+    echo"Data inserted";
+}
+
+else{
+    echo"Something wrong";
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Moodtracker</title>
+</head>
+<body>
+    <form method="POST" action="#">
+    <div class="container-box">
+        <h2>Score: <span id="score">0</span> </h2>
+        <h1><?=$_SESSION["sess_user"];?>, how are you feeling?</h1>
+        <div class="radio-tile-group">
+            <div class="images">
+                <input id="exellent"type="radio" name="mood" value="exellent">
+                <div class="radio-tile">
+                   <img src="image3.png">
+                   <label for="exellent"></label>
+                </div>
+              </div>
+              <div class="images">
+                  <input id="normal" type="radio" name="mood" value="normal">
+                  <div class="radio-tile">
+                     <img src="image2.png">
+                     <label for="normal"></label>
+                  </div>
+                </div>
+                <div class="images">
+                  <input id="sad" type="radio" name="mood" value="sad">
+                  <div class="radio-tile">
+                     <img src="image4.png">
+                     <label for="sad"></label>
+                  </div>
+                </div>
+        </div>
+        
+           <script>
+
+            function IncreaseScore(){
+            score++;
+            localStorage.setItem('score', score);
+            document.getElementById("score").textContent = score;
+            }
+
+            window.onload = function(){
+                score=localStorage.getItem('score') || 0;
+                document.getElementById("score").textContent=score;
+            };
+
+            let btn=document.getElementById("btn")
+            let spans= document.getElementsByTagName("span");
+
+            btn.onclick = function(){
+                for(span in spans){
+                    span.classList.add("anim");
+                }
+
+                setTimeout(function(){
+                    span.classList.remove("anim");
+                }, 500)
+            }
+
+           </script>
+
+        <button onclick="IncreaseScore()" class="putmood" type="submit" value="mymood" name="submit" id="btn">My Mood
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+        
+        
+        <a href="index.html" class="btn-logout">LOG OUT</a>
+
+    </div>
+    </form>
+    
+</body>
+</html>
+<?php
+}
+?>
