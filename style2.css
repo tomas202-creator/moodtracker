@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@500&family=Inter&family=Raleway:ital,wght@0,200;0,500;0,600;0,700;1,800&display=swap');
 
 body{
-    background-color: #886464;
+    background-color: #100d54;
 }
 .container-box{
+    position: absolute;
     text-align: center;
     justify-content: center;
 }
@@ -66,7 +67,7 @@ border-radius: 30px;
 
 .btn-logout{
     position: absolute;
-   margin-top: 50px;
+   margin-top: 100px;
    font-family: 'Raleway';
 font-style: normal;
 font-weight: 800;
@@ -80,75 +81,90 @@ color: #FDDE30;
  input:checked + .radio-tile{
     box-shadow: 0 0 30px #000000;
 }
+.btn{
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+}
+.putmood{
+    margin: 50vh;
+    height: 60px;
+    width: 120px;
+
+}
 .putmood span{
     background: #efd232;
     border: 1px solid #efd232;
-    width: 14px;
-    height: 14px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     position: absolute;
-    top: -10px;
-    left: -10px;
-    z-index: 100;
+    z-index: -10;
+    transform: scale(0);
 }
 
 .putmood span:nth-child(1){
-    top: -10%;
-    left: -10%;
+    top: 45%;
+    right: 49.5%;
+
 }
 .putmood span:nth-child(2){
-    top: -5%;
-    left: 0;
+    top: 48%;
+    left: 46%;
     background: transparent;
 }
 .putmood span:nth-child(3){
-    top: -5%;
-    left: -1%;
-    background: transparent;
+    bottom: 42%;
+
 }
 .putmood span:nth-child(4){
-    top: -7%;
-    left: 2%;
-}
-.putmood span:nth-child(5){
-    top: -35%;
-    left: -90%;
-}
-.putmood span:nth-child(6){
-    top: -1%;
-    left: -10%;
-}
-.putmood span:nth-child(7){
-    top: -16%;
-    left: 1%;
+    top: 48%;
+    right: 46%;
     background: transparent;
 }
+.putmood span:nth-child(5){
+    bottom: 45%;
+    right: 54%;
+
+}
+.putmood span:nth-child(6){
+    top: 48%;
+    left: 46%;
+    background: transparent;
+}
+.putmood span:nth-child(7){
+    bottom: 42%;
+    left: 48%;
+
+}
 .putmood span:nth-child(8){
-    top: -10%;
-    left: -10%;
+    top: 53%;
+    right: 45%;
     background: transparent;
 }
 .putmood span:nth-child(9){
-    top: 8%;
-    left: 4%;
+    top: 48.5%;
+    left: 47.5%;
+
 }
 .putmood span:nth-child(10){
-    top: 39%;
-    left: 11%;
+    top: 43%;
+    right: 57%;
     background: transparent;
 }
+
 .anim{
-    animation: moving 0.5 linear reverse forwards;
+    animation: moving 0.5s linear reverse forwards;
 }
 @keyframes moving{
     0%{
         transform: scale(0);
     }
-    10%{
+    50%{
         transform: scale(1);
     }
     100%{
-        top:50%;
+        top: 50%;
         left:50%;
     }
 }
