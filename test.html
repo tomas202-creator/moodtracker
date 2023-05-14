@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+    <audio id="audio-background" src="eco-technology-145636.mp3" loop autoplay muted>
+        
+    </audio>
     <div class="btn">
         <button class="putmood" id="mybtn">
             My mood
@@ -21,10 +24,24 @@
             <span></span>
             <span></span>
         </button>
+        <audio src="click-button-140881.mp3" id="myAudio"></audio>
         <script>
-            let btn=document.getElementById("mybtn")
+            
+            let btn=document.getElementById("mybtn");
             let spans= document.getElementsByTagName("span");
-
+            var audio = document.getElementById("myAudio");
+            let audioBckg = document.getElementById("audio-background")
+            
+            audioBckg.volume = 0.05;
+            audio.addEventListener('ended', function(){
+                audio.currentTime=0;
+            });
+            document.getElementById("mybtn").addEventListener("click", playSound);
+            function playSound(){
+                audio.pause();
+                audio.currentTime=0;
+                audio.play();
+            };
             btn.onclick = function(){
                 for(span of spans){
                     span.classList.add("anim");
@@ -36,6 +53,8 @@
                     }
                 }, 1500)
             }
+
+        
          </script>
     </div>
 </body>

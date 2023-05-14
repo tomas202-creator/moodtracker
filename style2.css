@@ -90,6 +90,11 @@ color: #FDDE30;
     margin: 50vh;
     height: 60px;
     width: 120px;
+    border-radius: 20px;
+    color: transparent;
+    border: 3px;
+    border-color: #efd232;
+
 
 }
 .putmood span{
